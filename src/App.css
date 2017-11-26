@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+.bgblue {
+    background-color: #3498DB;
+}
+.textwhite {
+  color:#ffffff;
+}
+.bannerwrap {
+  text-align: center;
+  padding:3%;
+  font-family: 'Julius Sans One', sans-serif;
+}
+.bannercontent {
+  margin: 0 auto;
+  width: 960px;
+}
+#mapid {
+  height: 100%;
+  width:100%;
+}
+h1 {
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Cabin', sans-serif;
+    @include transition(all .3s ease);
+  }
+
+.remodal-bg {
+  position:fixed;
+  left:0px;
+  top:0px;
+  height:100%;
+  width:100%;
+  z-index:9999;
+  background-color:rgba(0, 0, 0, 0.7);
+}
+.introheader {
+  position:relative;
+  margin:0 auto;
+  margin-top:10%;
+  height: 20%;
+  width:100%;
+  min-width:200px;
+  background-color:grey;
+}
+.click-area {
+  position:relative;
+  width:40%!important;
+  min-width:200px;
+  margin:0 auto;
+  margin-top:10%!important;
+}
+.remodal-overlay {
+  background: rgba(33, 36, 46, 0.0);
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

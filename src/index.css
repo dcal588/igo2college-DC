@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+div[data-reactroot] {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.bgblue {
+    background-color: #3498DB;
+}
+.textwhite {
+  color:#ffffff;
+}
+.bannerwrap {
+  text-align: center;
+  padding:3%;
+  font-family: 'Julius Sans One', sans-serif;
+}
+.bannercontent {
+  margin: 0 auto;
+  width: 960px;
+}
