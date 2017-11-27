@@ -11,24 +11,24 @@ const Navbar = props =>
           IGO2COLLEGE
         </Link>
       </div>
-      <ul className="nav navbar-nav">
+      <ul className="nav navbar-nav navbar-right">
         <li
           className={
             window.location.pathname === "/" ||
-            window.location.pathname === "/about"
+            window.location.pathname === "/start"
               ? "active"
               : ""
           }
         >
-          <Link to="/">About</Link>
+          <Link to="/">Start</Link>
         </li>
         <li
-          className={window.location.pathname === "/discover" ? "active" : ""}
+          className={window.location.pathname === "/signup" ? "active" : ""}
         >
-          <Link to="/discover">Discover</Link>
+          <Link to="/signup">Sign Up</Link>
         </li>
-        <li className={window.location.pathname === "/search" ? "active" : ""}>
-          <Link to="/search">Search</Link>
+        <li className={window.location.pathname === "/login" ? "active" : ""}>
+          <Link to="/login">Log In</Link>
         </li>
       </ul>
     </div>

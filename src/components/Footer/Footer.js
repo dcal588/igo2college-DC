@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () =>
   <footer className="footer">
-    <span>Pupster 2017</span>
-  </footer>;
+    <span>IGO2COLLEGE 2017</span>
+  </footer>
 
 export default Footer;
