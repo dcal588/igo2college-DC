@@ -39,7 +39,7 @@ class SignUp extends Component {
   render() {
     return (
       <Container style={{ minHeight: "80%" }}>
-        <h1 className="text-center">Log In!</h1>
+        <h1 className="text-center">Sign Up!</h1>
         <Alert
           type="danger"
           style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}

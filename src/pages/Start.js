@@ -7,8 +7,8 @@ import Introheader from "../components/Introheader";
 
 const Start = () =>
 <body>
-  <Introheader/>
 <div id="container">
+  <Introheader/>
 </div>
 </body>
 
