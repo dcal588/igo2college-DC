@@ -8,10 +8,10 @@ const Introheader = props =>
     <div class="row">
         <div class="col-xs-offset-3 col-xs-6 text-center enter_section">
           <h2 class="textwhite">ENTER A COLLEGE OR UNIVERSITY NAME</h2>
-          <form action="/SearchResultsPage" method="GET" id = "myform">
-            <input type="text" class="form-control" id="schoolsearch"/>
-            <button type="button" class="btn btn-primary"> SUBMIT</button>
-          </form>
+        <form action="/school" method="GET" id="my-form">
+          <input  type="text" className="form-control" id="enter_text"      onBlur={ this.setSchool.bind(this) }/>
+            <button onClick={ this.fetchSchool.bind(this) } type="submit" className="btn btn-primary" id="text-enter-button button submit">Submit</button>
+        </form>
         </div>
     </div>
     </div>
