@@ -6,10 +6,9 @@ import Col from "../components/Col";
 import SearchResults from "../components/SearchResults";
 
 const SearchResultsPage = () =>
-<body>
-  <SearchResults/>
+
 <div id="container">
+  <SearchResults/>
 </div>
-</body>
 
 export default SearchResultsPage;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './SearchResults.css';
+import Introheader from "../Introheader";
 
 class SearchResults extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class SearchResults extends Component {
     }
   }
 
-  fetchSchool(event) {
+  fetchSchool = (event) => {
     event.preventDefault();
 
 
@@ -40,7 +41,7 @@ class SearchResults extends Component {
   });
 };
 
-  setSchool(event) {
+  setSchool = (event) => {
     event.preventDefault();
     this.setState({
       schoolName: event.target.value,
@@ -60,8 +61,8 @@ class SearchResults extends Component {
         <p>Location: { this.state.city }  {this.state.state} </p>
         <p>Accreditor: { this.state.accreditor } </p>
         <p>School Homepage: { this.state.url } </p>
-        <p>Average Tuition: ${ this.state.tuition.toLocaleString() } </p>
-        <p>Average Debt: ${ this.state.debt.toLocaleString() } </p>
+        <p>Average Tuition: ${ this.state.tuition.toString() } </p>
+        <p>Average Debt: ${ this.state.debt.toString() } </p>
 
       </div>
     );
