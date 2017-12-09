@@ -10,7 +10,7 @@ const Start = () =>
 <body>
 <div id="container">
   <Introheader/>
-  <SearchResults/>
+  
 </div>
 </body>
 

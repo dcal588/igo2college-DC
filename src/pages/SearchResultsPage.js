@@ -5,9 +5,9 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import SearchResults from "../components/SearchResults";
 
-const SearchResultsPage = () =>
+export const SearchResultsPage = () =>
 <body>
-  <SearchResults/>
+  <SearchResults />
 <div id="container">
 </div>
 </body>
