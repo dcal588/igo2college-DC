@@ -6,12 +6,14 @@ import Col from "../components/Col";
 import Introheader from "../components/Introheader";
 import SearchResults from "../components/SearchResults";
 
-const Start = () =>
-<body>
+const Start = (props) => [
+
 <div id="container">
+
   <Introheader/>
+
   
 </div>
-</body>
+]
 
 export default Start;

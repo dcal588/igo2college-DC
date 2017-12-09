@@ -8,8 +8,12 @@ import SearchResults from "../components/SearchResults";
 export const SearchResultsPage = () =>
 <body>
   <SearchResults />
+
+
+
+
 <div id="container">
+ 
 </div>
-</body>
 
 export default SearchResultsPage;

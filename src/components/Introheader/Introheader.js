@@ -19,6 +19,7 @@ render() {
             <input  type="text" className="form-control" id="enter_text" onBlur={ this.setSchool }/>
               <button onClick={ this.fetchSchool } type="submit" className="btn btn-primary" id="text-enter-button button submit">Submit</button>
           </form>
+
         </div>
     </div>
     </div>
