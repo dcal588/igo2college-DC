@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './SearchResults.css';
 import Introheader from "../Introheader";
 
-class SearchResults extends Component {
+export class SearchResults extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +15,9 @@ class SearchResults extends Component {
     }
   }
 
+
   fetchSchool = (event) => {
+
     event.preventDefault();
 
 
@@ -41,12 +43,14 @@ class SearchResults extends Component {
   });
 };
 
+
   setSchool = (event) => {
+
     event.preventDefault();
     this.setState({
       schoolName: event.target.value,
-      // debt: event.target.value,
-      // tuition: event.target.value
+       // debt: event.target.value,
+       // tuition: event.target.value
     });
     document.getElementById("my-form").reset();
   };
@@ -54,9 +58,14 @@ class SearchResults extends Component {
 
 
   render() {
+    //if statement to display results only if there is a school match
     return (
 
         <div>
+        <form  method="GET" id="my-form">
+          <input  type="text" className="form-control" id="enter_text" onBlur={ this.setSchool }/>
+            <button onClick={ this.fetchSchool } type="submit" className="btn btn-primary" id="text-enter-button button submit">Submit</button>
+        </form>
         <p>School: { this.state.schoolName } </p>
         <p>Location: { this.state.city }  {this.state.state} </p>
         <p>Accreditor: { this.state.accreditor } </p>

@@ -1,4 +1,8 @@
-import React from "react";
+
+import React , { Component } from "react";
+import ReactDOM from 'react-dom';
+
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignUp from "./pages/SignUp";
@@ -13,9 +17,9 @@ import Wrapper from "./components/Wrapper";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Introheader from "./components/Introheader";
 
+
+
 const App = () =>
-
-
   <MuiThemeProvider>
     <Router>
       <div>
@@ -35,5 +39,4 @@ const App = () =>
       </div>
     </Router>
   </MuiThemeProvider>
-
 export default App;

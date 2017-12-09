@@ -9,8 +9,9 @@ import SearchResults from "../components/SearchResults";
 const Start = (props) => [
 
 <div id="container">
-  <Introheader {...props}/>
-  <SearchResults/>
+
+  <Introheader/>
+
   
 </div>
 ]

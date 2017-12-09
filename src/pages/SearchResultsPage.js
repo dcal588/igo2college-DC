@@ -5,10 +5,15 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import SearchResults from "../components/SearchResults";
 
-const SearchResultsPage = () =>
+export const SearchResultsPage = () =>
+<body>
+  <SearchResults />
+
+
+
 
 <div id="container">
-  <SearchResults/>
+ 
 </div>
 
 export default SearchResultsPage;
