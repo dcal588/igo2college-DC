@@ -17,6 +17,7 @@ render() {
           <form action="/SearchResultsPage" method="GET" id="my-form">
               <button type="submit" className="btn btn-primary" id="text-enter-button button submit">Click here to search for a college</button>
           </form>
+
         </div>
     </div>
     </div>
