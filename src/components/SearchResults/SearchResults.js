@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './SearchResults.css';
+import { Link } from 'react-router-dom';
 
 export class SearchResults extends Component {
   constructor(props) {
@@ -64,7 +65,11 @@ export class SearchResults extends Component {
             {this.state.results.map(function(result, index) {
               console.log(result);
               return <li key = { index }>
-                <a id='resultid' href='/Details'>School:{result['school.name']} </a>
+                <Link to={
+                  {
+                    pathname: "/details",
+                    state: { result: 'test' }
+                  }}>School:{result['school.name']}</Link>
                 <p>Location: {result['school.city']}, {result['school.state']} </p>
                 <p>School Website: {result['school.school_url']} </p>
                 <p>Accreditor: {result['school.accreditor']}</p>
