@@ -1,8 +1,8 @@
 import React from "react";
-import "./SearchForm.css";
+import "./Details.css";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
-const SearchForm = props =>
+const Details = props =>
   <form className="search">
     <div className="form-group">
       <label htmlFor="breed">Breed Name:</label>
@@ -29,4 +29,4 @@ const SearchForm = props =>
     </div>
   </form>;
 
-export default SearchForm;
+export default Details;

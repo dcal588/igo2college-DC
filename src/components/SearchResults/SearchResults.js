@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './SearchResults.css';
-import Introheader from "../Introheader";
 
 export class SearchResults extends Component {
   constructor(props) {
@@ -15,37 +14,25 @@ export class SearchResults extends Component {
     }
   }
 
-
-  fetchSchool = (event) => {
-
+   fetchSchool = (event) => {
     event.preventDefault();
 
 
     const apiKey = 'XdOHSc8fKhMKidPu2HWqCZmMy9OxtCJamGC580Bi';
-    const fields = `_fields=school.name,school.city,school.state,school.accreditor,school.school_url,2015.cost.tuition.in_state,2015.aid.median_debt.completers.overall,2015.cost.tuition.in_state&school.name=${this.state.schoolName}`;
+    const fields = `_fields=id,school.name,school.city,school.state,school.accreditor,school.school_url,2015.cost.tuition.in_state,2015.aid.median_debt.completers.overall,2015.cost.tuition.in_state&school.name=${this.state.schoolName}`;
     const requestUrl = `https://api.data.gov/ed/collegescorecard/v1/schools?&api_key=${apiKey}&${fields}`;
 
      fetch(requestUrl)
     .then((res) => res.json())
     .then((data) => {
       // console.log(data.results[0]['school.name'])
-      console.log(data.results[0])
       this.setState({
-        schoolName: data.results[0]['school.name'],
-        city: data.results[0]['school.city'],
-        state: data.results[0]['school.state'],
-        accreditor: data.results[0]['school.accreditor'],
-        url: data.results[0]['school.school_url'],
-        tuition: data.results[0]['2015.cost.tuition.in_state'],
-        debt: data.results[0]['2015.aid.median_debt.completers.overall']
+        results: data.results
     })
-    console.log(this.state.schoolName);
   });
 };
 
-
-  setSchool = (event) => {
-
+   setSchool = (event) => {
     event.preventDefault();
     this.setState({
       schoolName: event.target.value,
@@ -55,24 +42,36 @@ export class SearchResults extends Component {
     document.getElementById("my-form").reset();
   };
 
-
-
   render() {
-    //if statement to display results only if there is a school match
-    return (
-
+      let display;
+      if ( this.state.results) {
+        display = (
+          <div >
+          {this.state.results.map(function(result, index){
+                                console.log(result);
+                    return <li key={ index }>
+            <a href=' /Details/'>School: { result['school.name'] } </a>
+            <p>Location: { result['school.city'] } , { result['school.state'] }  </p>
+            <p>Accreditor: { result['school.accreditor'] } </p>
+            <p>Debt: { result['2015.aid.median_debt.completers.overall'] } </p>
+            <p>Tuition: { result['2015.cost.tuition.in_state'] } </p>
+            <p>School URL: { result['school.school_url'] } </p>
+ </li>;
+                  })}
+          </div>
+        )
+      }else {
+        display = (
+          <h2> There are no schools matching your search</h2>
+        )
+      }
+      return (
         <div>
         <form  method="GET" id="my-form">
           <input  type="text" className="form-control" id="enter_text" onBlur={ this.setSchool }/>
             <button onClick={ this.fetchSchool } type="submit" className="btn btn-primary" id="text-enter-button button submit">Submit</button>
         </form>
-        <p>School: { this.state.schoolName } </p>
-        <p>Location: { this.state.city }  {this.state.state} </p>
-        <p>Accreditor: { this.state.accreditor } </p>
-        <p>School Homepage: { this.state.url } </p>
-        <p>Average Tuition: ${ this.state.tuition.toString() } </p>
-        <p>Average Debt: ${ this.state.debt.toString() } </p>
-
+        { display }
       </div>
     );
   }

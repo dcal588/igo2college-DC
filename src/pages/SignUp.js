@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import Container from "../components/Container";
-import SearchForm from "../components/SearchForm";
 import SignUpForm from "../components/SignUpForm";
 import SearchResults from "../components/SearchResults";
 import Alert from "../components/Alert";
