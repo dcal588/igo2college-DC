@@ -27,11 +27,6 @@ export class SearchResults extends Component {
     .then((res) => res.json())
     .then((data) => {
       // console.log(data.results[0]['school.name'])
-<<<<<<< HEAD
-      this.setState({
-        results: data.results
-    })
-=======
       console.log(data.results)
       this.setState({
         results: data.results
@@ -46,7 +41,6 @@ export class SearchResults extends Component {
     })
 
     console.log(this.state.schoolName);
->>>>>>> 0d147127ed1c7af150eb4c82ac388672d9943d9f
   });
 };
 
@@ -61,24 +55,6 @@ export class SearchResults extends Component {
     document.getElementById("my-form").reset();
   };
 
-<<<<<<< HEAD
-  render() {
-      let display;
-      if ( this.state.results) {
-        display = (
-          <div >
-          {this.state.results.map(function(result, index){
-                                console.log(result);
-                    return <li key={ index }>
-            <a href=' /Details/'>School: { result['school.name'] } </a>
-            <p>Location: { result['school.city'] } , { result['school.state'] }  </p>
-            <p>Accreditor: { result['school.accreditor'] } </p>
-            <p>Debt: { result['2015.aid.median_debt.completers.overall'] } </p>
-            <p>Tuition: { result['2015.cost.tuition.in_state'] } </p>
-            <p>School URL: { result['school.school_url'] } </p>
- </li>;
-                  })}
-=======
 
   render() {
       let display;
@@ -97,7 +73,6 @@ export class SearchResults extends Component {
               </li>
             })}
 
->>>>>>> 0d147127ed1c7af150eb4c82ac388672d9943d9f
           </div>
         )
       }else {
