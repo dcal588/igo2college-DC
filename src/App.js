@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Introheader from "./components/Introheader";
+import Details from "./components/Details";
 
 
 
@@ -34,7 +35,10 @@ const App = () =>
         <Wrapper>
           <Route exact path="/searchresultspage" component={SearchResultsPage} />
         </Wrapper>
-          <Route exact path="/details" component={Details}
+        <Wrapper>
+          <Route exact path="/details" component={Details} />
+        </Wrapper>
+
       </div>
     </Router>
   </MuiThemeProvider>
