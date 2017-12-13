@@ -1,8 +1,6 @@
 
 import React , { Component } from "react";
 import ReactDOM from 'react-dom';
-
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignUp from "./pages/SignUp";
@@ -36,8 +34,9 @@ const App = () =>
         <Wrapper>
           <Route exact path="/searchresultspage" component={SearchResultsPage} />
         </Wrapper>
+          <Route exact path="/details" component={Details}
       </div>
     </Router>
   </MuiThemeProvider>
-  
+
 export default App;
