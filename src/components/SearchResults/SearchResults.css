@@ -1,3 +1,8 @@
 ul.search-results img {
   margin: 0 auto;
 }
+
+#schoolList {
+  margin-left: 90px;
+  border-top-width: thick;
+}

@@ -5,6 +5,7 @@ export class SearchResults extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // results: []
       schoolName: '',
       city: '',
       state: '',
@@ -26,9 +27,26 @@ export class SearchResults extends Component {
     .then((res) => res.json())
     .then((data) => {
       // console.log(data.results[0]['school.name'])
+<<<<<<< HEAD
       this.setState({
         results: data.results
     })
+=======
+      console.log(data.results)
+      this.setState({
+        results: data.results
+        // schoolName: data.results[0]['school.name'],
+        // city: data.results[0]['school.city'],
+        // state: data.results[0]['school.state'],
+        // accreditor: data.results[0]['school.accreditor'],
+        // url: data.results[0]['school.school_url'],
+        // tuition: data.results[0]['2015.cost.tuition.in_state'],
+        // debt: data.results[0]['2015.aid.median_debt.completers.overall']
+
+    })
+
+    console.log(this.state.schoolName);
+>>>>>>> 0d147127ed1c7af150eb4c82ac388672d9943d9f
   });
 };
 
@@ -39,9 +57,11 @@ export class SearchResults extends Component {
        // debt: event.target.value,
        // tuition: event.target.value
     });
+
     document.getElementById("my-form").reset();
   };
 
+<<<<<<< HEAD
   render() {
       let display;
       if ( this.state.results) {
@@ -58,6 +78,26 @@ export class SearchResults extends Component {
             <p>School URL: { result['school.school_url'] } </p>
  </li>;
                   })}
+=======
+
+  render() {
+      let display;
+      if ( this.state.results ) {
+        display = (
+          <div id='schoolList'>
+            {this.state.results.map(function(result, index) {
+              console.log(result);
+              return <li key = { index }>
+                <a id='resultid' href='/Details'>School:{result['school.name']} </a>
+                <p>Location: {result['school.city']}, {result['school.state']} </p>
+                <p>School Website: {result['school.school_url']} </p>
+                <p>Accreditor: {result['school.accreditor']}</p>
+                <p>Tuition: {result['2015.cost.tuition.in_state']}</p>
+                <p>Average Debt: {result['2015.aid.median_debt.completers.overall']}</p>
+              </li>
+            })}
+
+>>>>>>> 0d147127ed1c7af150eb4c82ac388672d9943d9f
           </div>
         )
       }else {
