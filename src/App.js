@@ -36,7 +36,7 @@ const App = () =>
           <Route exact path="/searchresultspage" component={SearchResultsPage} />
         </Wrapper>
         <Wrapper>
-          <Route exact path="/details" component={Details} />
+          <Route exact path="/details/:schoolid/" component={Details} />
         </Wrapper>
 
       </div>

@@ -28,7 +28,7 @@ export class SearchResults extends Component {
     .then((res) => res.json())
     .then((data) => {
       // console.log(data.results[0]['school.name'])
-      console.log(data.results)
+      //console.log(data.results)
       this.setState({
         results: data.results
         // schoolName: data.results[0]['school.name'],
@@ -41,7 +41,7 @@ export class SearchResults extends Component {
 
     })
 
-    console.log(this.state.schoolName);
+    //console.log(this.state.schoolName);
   });
 };
 
@@ -65,11 +65,7 @@ export class SearchResults extends Component {
             {this.state.results.map(function(result, index) {
               console.log(result);
               return <li key = { index }>
-                <Link to={
-                  {
-                    pathname: "/details",
-                    state: { result: 'test' }
-                  }}>School:{result['school.name']}</Link>
+                <Link to={{pathname: "/details/"+result['id']}}>School:{result['school.name']}</Link>
                 <p>Location: {result['school.city']}, {result['school.state']} </p>
                 <p>School Website: {result['school.school_url']} </p>
                 <p>Accreditor: {result['school.accreditor']}</p>
