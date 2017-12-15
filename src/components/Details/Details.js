@@ -4,11 +4,9 @@ import "./Details.css";
 class Details extends Component {
 
   render() {
-    console.log(this.props);
+    console.log(this.props.schoolName);
     return (
-      <div>
-<p>{this.props.apple}</p>
-      </div>
+      <div>test</div>
 )}
 }
 
