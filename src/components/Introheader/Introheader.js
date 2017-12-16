@@ -32,7 +32,7 @@ class IntroHeader extends Component {
     <center>
     <p className="displayFinancialAid">want to explore financial aid?</p>
     <p className="displayFinancialAidButton">
-      <a className="btn btn-warning btn-lg disabled" href="#" role="button">search FAFSA info by state</a>
+      <a className="btn btn-warning btn-lg disabled" href="#" role="button">FAFSA information coming soon</a>
     </p>
   </center>
 </div>

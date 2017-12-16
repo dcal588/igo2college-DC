@@ -101,7 +101,8 @@ class Details extends Component {
 
      //console.log(this.props.match.params);
     return (
-      <div className = "container">
+        <div className="jumbotronDetails jumbotron-fluid">
+          <div className = "detailsContainer">
         <h1><strong>{this.state.schoolName}</strong></h1>
         <p>LOCATION: <strong>{this.state.city}, {this.state.state}</strong></p>
         <p>WEBSITE: <a href={'http://' + this.state.url}>{this.state.url}</a> </p>
@@ -117,6 +118,7 @@ class Details extends Component {
         <p> SAT MATH: <strong>{this.state.satMath}</strong></p>
         <p> ACT COMPOSITE: <strong>{this.state.act}</strong></p>
       </div>
+    </div>
 )}
 }
 
