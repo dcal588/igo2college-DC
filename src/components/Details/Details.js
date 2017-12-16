@@ -104,7 +104,7 @@ class Details extends Component {
       <div className = "container">
         <h1><strong>{this.state.schoolName}</strong></h1>
         <p>LOCATION: <strong>{this.state.city}, {this.state.state}</strong></p>
-        <p>WEBSITE: <a>{this.state.url}</a> </p>
+        <p>WEBSITE: <a href={'http://' + this.state.url}>{this.state.url}</a> </p>
         <p>TYPE: <strong>{type}</strong></p>
         <p>ACCREDITOR: <strong>{this.state.accreditor}</strong></p>
         <p>IN-STATE TUITION: <strong>${ this.state.tuition.toLocaleString() }</strong></p>
