@@ -11,17 +11,17 @@ export class SearchResults extends Component {
       city: '',
       state: '',
       url: '',
-      tuition: '',
-      debt: ''
+      tuitionIn: '',
+      debt: '',
+      
     }
   }
 
    fetchSchool = (event) => {
     event.preventDefault();
 
-
     const apiKey = 'XdOHSc8fKhMKidPu2HWqCZmMy9OxtCJamGC580Bi';
-    const fields = `_fields=id,school.name,school.city,school.state,school.accreditor,school.school_url,2015.cost.tuition.in_state,2015.aid.median_debt.completers.overall,2015.cost.tuition.in_state&school.name=${this.state.schoolName}`;
+    const fields = `_fields=id,school.name,school.city,school.state,school.accreditor,school.school_url,2015.cost.tuition.in_state,2015.aid.median_debt.completers.overall,2015.cost.tuition.in_state,school.carnegie_size_setting&school.name=${this.state.schoolName}`;
     const requestUrl = `https://api.data.gov/ed/collegescorecard/v1/schools?&api_key=${apiKey}&${fields}`;
 
      fetch(requestUrl)
@@ -31,6 +31,7 @@ export class SearchResults extends Component {
       //console.log(data.results)
       this.setState({
         results: data.results
+
         // schoolName: data.results[0]['school.name'],
         // city: data.results[0]['school.city'],
         // state: data.results[0]['school.state'],
@@ -64,21 +65,15 @@ export class SearchResults extends Component {
           <div id='schoolList'>
             {this.state.results.map(function(result, index) {
               console.log(result);
-              return <li key = { index }>
+              return <div key = { index }>
                 <Link to={{pathname: "/details/"+result['id']}}>School:{result['school.name']}</Link>
                 <p>Location: {result['school.city']}, {result['school.state']} </p>
                 <p>School Website: {result['school.school_url']} </p>
-                <p>Accreditor: {result['school.accreditor']}</p>
-                <p>Tuition: {result['2015.cost.tuition.in_state']}</p>
-                <p>Average Debt: {result['2015.aid.median_debt.completers.overall']}</p>
-              </li>
+
+              </div>
             })}
 
           </div>
-        )
-      }else {
-        display = (
-          <h2> There are no schools matching your search</h2>
         )
       }
       return (
