@@ -13,7 +13,7 @@ export class SearchResults extends Component {
       url: '',
       tuitionIn: '',
       debt: '',
-      
+
     }
   }
 
@@ -68,7 +68,7 @@ export class SearchResults extends Component {
               return <div key = { index }>
                 <Link to={{pathname: "/details/"+result['id']}}>School:{result['school.name']}</Link>
                 <p>Location: {result['school.city']}, {result['school.state']} </p>
-                <p>School Website: {result['school.school_url']} </p>
+                <a href={'http://' + result['school.school_url']}>School Website: {result['school.school_url']} </a>
 
               </div>
             })}
