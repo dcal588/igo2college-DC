@@ -66,7 +66,7 @@ export class SearchResults extends Component {
             {this.state.results.map(function(result, index) {
               console.log(result);
               return <div key = { index }>
-                <Link to={{pathname: "/details/"+result['id']}}>School:{result['school.name']}</Link>
+                <Link to={{pathname: "/details/"+result['id']}}><strong>School: </strong> {result['school.name']}</Link>
                 <p>Location: {result['school.city']}, {result['school.state']} </p>
                 <a href={'http://' + result['school.school_url']}>School Website: {result['school.school_url']} </a>
 
@@ -78,12 +78,19 @@ export class SearchResults extends Component {
       }
       return (
         <div>
-        <form  method="GET" id="my-form">
+          <div className="jumbotronSRP jumbotron-fluid">
+            <div className="container">
+            <center>
+              <p className="displaySRP">search for a school</p>
+            </center>
+        <form method="GET" id="my-form">
           <input  type="text" className="form-control" id="enter_text" onBlur={ this.setSchool }/>
-            <button onClick={ this.fetchSchool } type="submit" className="btn btn-primary" id="text-enter-button button submit">Submit</button>
+            <center><button onClick={ this.fetchSchool } type="submit" className="btnSRP btn-warning btn-lg" id="text-enter-button button submit">Submit</button></center>
         </form>
         { display }
       </div>
+    </div>
+    </div>
     );
   }
 }

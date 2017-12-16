@@ -1,8 +1,38 @@
-ul.search-results img {
+@import "https://fonts.googleapis.com/css?family=Open+Sans:800i|Barlow:400i|News+Cycle";
+
+/* ul.search-results img {
   margin: 0 auto;
+} */
+
+.jumbotronSRP {
+  background-image: url(../../images/details.jpg);
+  color: white;
+  height: 600px;
+  background-size: cover;
+  opacity: 0.7
+}
+
+#my-form {
+  padding-top: 10px;
+  text-align: center
+}
+
+.btnSRP {
+  opacity: 1
 }
 
 #schoolList {
-  margin-left: 90px;
+  margin-top: 50px;
   border-top-width: thick;
+  background: #F1BA7C;
+  opacity: 0.8;
+  text-align: center;
+  font-family: 'News Cycle', sans-serif;
+  font-size: 20px
+}
+
+.displaySRP {
+  font-family: 'Barlow', sans-serif;
+  padding-top: 100px;
+  font-size: 90px
 }
